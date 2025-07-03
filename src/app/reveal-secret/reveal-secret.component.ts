@@ -34,13 +34,11 @@ export class RevealSecretComponent implements OnInit{
 
     this.secretService.revealSecret(id, token).subscribe(
       (res) => {
-        console.log(res)
         this.plainText = res.plainText;
         this.cd.detectChanges();
 
       },
       (err) => {
-        console.log(err)
         this.error = err.error?.message || 'Failed to load secret';
         this.cd.detectChanges();
 

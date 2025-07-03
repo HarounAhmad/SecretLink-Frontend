@@ -46,7 +46,6 @@ export class CreateSecretComponent {
   }
 
   onSubmit() {
-    console.log(this.expiresAt)
     this.secretService.createSecret({ plainText: this.plaintext, expiresAt: this.expiresAt }).subscribe(
       (res) => {
         this.accessUrl = window.location.origin +  res.accessUrl;

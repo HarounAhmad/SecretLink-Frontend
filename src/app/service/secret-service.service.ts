@@ -1,13 +1,14 @@
 import {Injectable, model} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {environment} from "@src/environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SecretServiceService {
 
-  private baseUrl = 'http://localhost:8080/api/v1/secrets';
+  private baseUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) {
   }
